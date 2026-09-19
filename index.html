@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Axiome — Conseil en intelligence artificielle</title>
+<meta name="description" content="Axiome est un cabinet de conseil en intelligence artificielle. Nous concevons, déployons et opérons des systèmes d'IA en production pour les entreprises exigeantes." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23533afd'/%3E%3Cpath d='M9 23L16 9l7 14M12 19h8' stroke='%23fff' stroke-width='1.8' fill='none' stroke-linecap='square'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- Barre de progression de lecture -->
+<div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- Halo qui suit le curseur -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ─────────────────────────── NAVIGATION ─────────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner shell">
+    <a class="brand" href="#top" aria-label="Axiome, accueil">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+          <path d="M4 19L12 5l8 14" stroke="currentColor" stroke-width="1.5" />
+          <path d="M8 15h8" stroke="currentColor" stroke-width="1.5" />
+        </svg>
+      </span>
+      <span class="brand__word">Axiome</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#expertises" data-nav>Expertises</a>
+      <a href="#methode" data-nav>Méthode</a>
+      <a href="#resultats" data-nav>Résultats</a>
+      <a href="#offres" data-nav>Offres</a>
+      <a href="#faq" data-nav>FAQ</a>
+      <span class="nav__indicator" id="navIndicator" aria-hidden="true"></span>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--ghost btn--sm" href="#contact">Espace client</a>
+      <a class="btn btn--primary btn--sm magnetic" href="#contact">Parler à un expert</a>
+    </div>
+
+    <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__rule" aria-hidden="true"></div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <a href="#expertises">Expertises</a>
+  <a href="#methode">Méthode</a>
+  <a href="#resultats">Résultats</a>
+  <a href="#offres">Offres</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn btn--primary" href="#contact">Parler à un expert</a>
+</div>
+
+<main id="main">
+
+<!-- ─────────────────────────── HERO ─────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero__grid-bg" aria-hidden="true"></div>
+  <div class="shell hero__inner">
+
+    <div class="hero__copy">
+      <p class="eyebrow reveal" data-delay="0">
+        <span class="eyebrow__rule" aria-hidden="true"></span>
+        Cabinet de conseil en IA — Paris · Genève · Montréal
+      </p>
+
+      <h1 class="display" id="heroTitle">
+        <span class="line">L'intelligence artificielle,</span>
+        <span class="line">livrée en production.</span>
+      </h1>
+
+      <p class="lede reveal" data-delay="260">
+        Nous accompagnons les directions générales et les équipes techniques de l'idée au
+        système opérationnel&nbsp;: cadrage de la valeur, architecture, mise en production
+        et supervision continue. Pas de démonstration. Des systèmes qui tournent.
+      </p>
+
+      <div class="hero__cta reveal" data-delay="360">
+        <a class="btn btn--primary magnetic" href="#contact">Démarrer un diagnostic</a>
+        <a class="btn btn--ghost magnetic" href="#methode">
+          <svg class="btn__icon" viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
+            <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+          Voir notre méthode
+        </a>
+      </div>
+
+      <dl class="hero__facts reveal" data-delay="440">
+        <div><dt>Mise en production moyenne</dt><dd><span class="count" data-to="9" data-suffix=" semaines">0</span></dd></div>
+        <div><dt>Systèmes supervisés</dt><dd><span class="count" data-to="140" data-suffix="+">0</span></dd></div>
+        <div><dt>Taux de reconduction</dt><dd><span class="count" data-to="94" data-suffix="&#37;">0</span></dd></div>
+      </dl>
+    </div>
+
+    <!-- Panneau « registre » animé -->
+    <div class="ledger reveal" data-delay="200" data-parallax="0.06" aria-hidden="true">
+      <div class="ledger__head">
+        <span class="ledger__dot"></span>
+        <span class="ledger__title">axiome · supervision temps réel</span>
+        <span class="ledger__live">LIVE</span>
+      </div>
+      <div class="ledger__rows" id="ledgerRows">
+        <div class="ledger__row"><span>Agent · qualification entrante</span><b data-tick="1284" data-step="3">1 284</b></div>
+        <div class="ledger__row"><span>Extraction documentaire</span><b data-tick="8730" data-step="11">8 730</b></div>
+        <div class="ledger__row"><span>Résolution automatique</span><b data-tick="412" data-step="2">412</b></div>
+        <div class="ledger__row"><span>Coût / 1 000 requêtes</span><b data-tick="038" data-fixed="0,38 €">0,38 €</b></div>
+        <div class="ledger__row"><span>Latence p95</span><b data-tick="740" data-step="7" data-unit=" ms">740 ms</b></div>
+      </div>
+      <div class="ledger__chart">
+        <svg viewBox="0 0 320 84" preserveAspectRatio="none" width="100%" height="84">
+          <line x1="0" y1="83" x2="320" y2="83" stroke="#e5edf5" stroke-width="1" />
+          <line x1="0" y1="42" x2="320" y2="42" stroke="#e5edf5" stroke-width="1" stroke-dasharray="2 4" />
+          <path id="ledgerPath" d="M0 74 L40 68 L80 71 L120 55 L160 58 L200 38 L240 30 L280 22 L320 8"
+                fill="none" stroke="#533afd" stroke-width="1.5" stroke-linejoin="round" />
+          <circle id="ledgerDot" cx="320" cy="8" r="3" fill="#533afd" />
+        </svg>
+      </div>
+      <div class="ledger__foot">
+        <span>Fiabilité 30 j</span><b>99,97&#37;</b>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="shell">
+    <div class="scroll-hint reveal" data-delay="600">
+      <span class="scroll-hint__line" aria-hidden="true"></span>
+      Faites défiler
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── RAIL DE CONFIANCE ─────────────────────────── -->
+<section class="band-rule" aria-label="Ils nous font confiance">
+  <div class="shell">
+    <p class="rail__label reveal">Ils nous confient leurs systèmes critiques</p>
+  </div>
+  <div class="marquee" data-marquee>
+    <div class="marquee__track">
+      <span>Groupe Lavoisier</span><span>Fondation Mérian</span><span>Novaterre</span>
+      <span>Banque Helvétique</span><span>Orsay Logistics</span><span>Cléo Santé</span>
+      <span>Atelier Bertin</span><span>Nord Énergie</span>
+      <span aria-hidden="true">Groupe Lavoisier</span><span aria-hidden="true">Fondation Mérian</span><span aria-hidden="true">Novaterre</span>
+      <span aria-hidden="true">Banque Helvétique</span><span aria-hidden="true">Orsay Logistics</span><span aria-hidden="true">Cléo Santé</span>
+      <span aria-hidden="true">Atelier Bertin</span><span aria-hidden="true">Nord Énergie</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─────────────────────────── EXPERTISES ─────────────────────────── -->
+<section class="section" id="expertises">
+  <div class="shell">
+    <header class="section__head">
+      <p class="eyebrow reveal"><span class="eyebrow__rule" aria-hidden="true"></span>Expertises</p>
+      <h2 class="heading-lg reveal" data-delay="60">Six pratiques, un seul objectif&nbsp;:<br />que le système tienne en production.</h2>
+      <p class="section__lede reveal" data-delay="120">
+        Nous intervenons sur toute la chaîne de valeur, du cadrage stratégique à l'exploitation.
+        Chaque mission est conduite par une équipe mixte&nbsp;: un associé, un architecte, un ingénieur.
+      </p>
+    </header>
+
+    <div class="cards">
+      <article class="card reveal tilt" data-delay="0">
+        <span class="card__rule" aria-hidden="true"></span>
+        <p class="card__tag">01 — Stratégie</p>
+        <h3 class="card__title">Cadrage &amp; portefeuille</h3>
+        <p class="card__body">Identification des cas d'usage à valeur démontrable, chiffrage du retour attendu, arbitrage entre construire, acheter et ne rien faire.</p>
+        <span class="card__link">Explorer <i aria-hidden="true">›</i></span>
+      </article>
+
+      <article class="card reveal tilt" data-delay="80">
+        <span class="card__rule" aria-hidden="true"></span>
+        <p class="card__tag">02 — Ingénierie</p>
+        <h3 class="card__title">Agents &amp; orchestration</h3>
+        <p class="card__body">Conception d'agents outillés, boucles de décision auditables, garde-fous déterministes et reprise sur incident. Le modèle n'est qu'un composant.</p>
+        <span class="card__link">Explorer <i aria-hidden="true">›</i></span>
+      </article>
+
+      <article class="card reveal tilt" data-delay="160">
+        <span class="card__rule" aria-hidden="true"></span>
+        <p class="card__tag">03 — Données</p>
+        <h3 class="card__title">Socle documentaire</h3>
+        <p class="card__body">Ingestion, découpage, indexation hybride et évaluation de la restitution. Une recherche qui échoue proprement vaut mieux qu'une réponse inventée.</p>
+        <span class="card__link">Explorer <i aria-hidden="true">›</i></span>
+      </article>
+
+      <article class="card reveal tilt" data-delay="0">
+        <span class="card__rule" aria-hidden="true"></span>
+        <p class="card__tag">04 — Qualité</p>
+        <h3 class="card__title">Évaluation continue</h3>
+        <p class="card__body">Jeux de tests métiers, annotation experte, mesure de dérive et tableaux de bord de non-régression avant chaque déploiement.</p>
+        <span class="card__link">Explorer <i aria-hidden="true">›</i></span>
+      </article>
+
+      <article class="card reveal tilt" data-delay="80">
+        <span class="card__rule" aria-hidden="true"></span>
+        <p class="card__tag">05 — Conformité</p>
+        <h3 class="card__title">Gouvernance &amp; RIA</h3>
+        <p class="card__body">Cartographie des risques, registre des traitements, documentation technique conforme au règlement européen sur l'IA et au RGPD.</p>
+        <span class="card__link">Explorer <i aria-hidden="true">›</i></span>
+      </article>
+
+      <article class="card reveal tilt" data-delay="160">
+        <span class="card__rule" aria-hidden="true"></span>
+        <p class="card__tag">06 — Exploitation</p>
+        <h3 class="card__title">Run &amp; supervision</h3>
+        <p class="card__body">Astreinte, observabilité des coûts et de la latence, optimisation des modèles et rapport mensuel au comité de direction.</p>
+        <span class="card__link">Explorer <i aria-hidden="true">›</i></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─────────────────────────── MÉTHODE (défilement collant) ─────────────────────────── -->
+<section class="section section--method" id="methode">
+  <div class="shell method">
+    <aside class="method__aside">
+      <div class="method__sticky">
+        <p class="eyebrow reveal"><span class="eyebrow__rule" aria-hidden="true"></span>Méthode</p>
+        <h2 class="heading-lg reveal" data-delay="60">Quatre temps.<br />Quatre-vingt-dix jours.</h2>
+        <p class="section__lede reveal" data-delay="120">
+          Un protocole éprouvé sur plus de soixante missions. Chaque étape produit un livrable
+          que vous pouvez utiliser, même si la suivante n'a pas lieu.
+        </p>
+        <div class="method__meter reveal" data-delay="180">
+          <span class="method__meter-fill" id="methodMeter"></span>
+        </div>
+        <p class="method__counter"><b id="methodStep">01</b> <span>/ 04</span></p>
+      </div>
+    </aside>
+
+    <ol class="steps" id="steps">
+      <li class="step reveal" data-step="1">
+        <span class="step__no">01</span>
+        <div>
+          <h3 class="heading">Diagnostic</h3>
+          <p class="step__body">Deux semaines. Entretiens métiers, audit des données disponibles, revue de l'existant technique. Nous repartons avec une carte des opportunités chiffrée et hiérarchisée.</p>
+          <ul class="step__list">
+            <li>Cartographie des cas d'usage</li>
+            <li>Estimation du gain annualisé</li>
+            <li>Note d'architecture cible</li>
+          </ul>
+        </div>
+      </li>
+      <li class="step reveal" data-step="2">
+        <span class="step__no">02</span>
+        <div>
+          <h3 class="heading">Preuve de valeur</h3>
+          <p class="step__body">Quatre semaines. Nous construisons le cas d'usage le plus discriminant sur vos données réelles, avec un protocole d'évaluation défini avant la première ligne de code.</p>
+          <ul class="step__list">
+            <li>Prototype fonctionnel évalué</li>
+            <li>Jeu de tests métier réutilisable</li>
+            <li>Décision go / no-go documentée</li>
+          </ul>
+        </div>
+      </li>
+      <li class="step reveal" data-step="3">
+        <span class="step__no">03</span>
+        <div>
+          <h3 class="heading">Industrialisation</h3>
+          <p class="step__body">Six à huit semaines. Intégration au système d'information, sécurisation, tests de charge, déploiement progressif et transfert de compétences à vos équipes.</p>
+          <ul class="step__list">
+            <li>Mise en production supervisée</li>
+            <li>Chaîne d'intégration continue</li>
+            <li>Formation des équipes internes</li>
+          </ul>
+        </div>
+      </li>
+      <li class="step reveal" data-step="4">
+        <span class="step__no">04</span>
+        <div>
+          <h3 class="heading">Exploitation</h3>
+          <p class="step__body">En continu. Nous restons responsables du système&nbsp;: surveillance des coûts, de la qualité et des dérives, avec un engagement de service contractuel.</p>
+          <ul class="step__list">
+            <li>Astreinte et engagement de service</li>
+            <li>Optimisation trimestrielle des coûts</li>
+            <li>Rapport mensuel de direction</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─────────────────────────── RÉSULTATS ─────────────────────────── -->
+<section class="section" id="resultats">
+  <div class="shell">
+    <header class="section__head">
+      <p class="eyebrow reveal"><span class="eyebrow__rule" aria-hidden="true"></span>Résultats</p>
+      <h2 class="heading-lg reveal" data-delay="60">Ce que nos clients mesurent<br />douze mois après la mise en production.</h2>
+    </header>
+
+    <div class="stats">
+      <div class="stat reveal" data-delay="0">
+        <p class="stat__num"><span class="count" data-to="63" data-suffix="&#37;">0</span></p>
+        <p class="stat__label">de temps de traitement en moins sur les dossiers entrants</p>
+      </div>
+      <div class="stat reveal" data-delay="80">
+        <p class="stat__num"><span class="count" data-to="4" data-prefix="" data-suffix=",2 M€">0</span></p>
+        <p class="stat__label">de coûts opérationnels évités, cumulés sur le portefeuille</p>
+      </div>
+      <div class="stat reveal" data-delay="160">
+        <p class="stat__num"><span class="count" data-to="11" data-suffix="&#215;">0</span></p>
+        <p class="stat__label">de volume absorbé à effectif constant</p>
+      </div>
+      <div class="stat reveal" data-delay="240">
+        <p class="stat__num"><span class="count" data-to="99" data-suffix=",97&#37;">0</span></p>
+        <p class="stat__label">de disponibilité constatée sur les systèmes supervisés</p>
+      </div>
+    </div>
+
+    <!-- Étude de cas -->
+    <div class="case reveal">
+      <div class="case__text">
+        <p class="card__tag">Étude de cas — Assurance</p>
+        <h3 class="heading">Un assureur santé traite 8 700 actes par jour sans effectif supplémentaire.</h3>
+        <p class="section__lede">
+          Le service de gestion croulait sous les pièces justificatives. Nous avons conçu une chaîne
+          d'extraction documentaire avec contrôle humain sur les seuls cas incertains&nbsp;: 82&nbsp;% des
+          dossiers sont désormais clos sans intervention, et la qualité mesurée dépasse la
+          référence humaine sur le jeu de test d'arbitrage.
+        </p>
+        <a class="link-chevron" href="#contact">Lire le dossier complet <i aria-hidden="true">›</i></a>
+      </div>
+      <div class="case__viz">
+        <svg viewBox="0 0 420 240" width="100%" height="240" role="img" aria-label="Évolution du taux de traitement automatique sur douze mois">
+          <g stroke="#e5edf5" stroke-width="1">
+            <line x1="0" y1="40" x2="420" y2="40" /><line x1="0" y1="90" x2="420" y2="90" />
+            <line x1="0" y1="140" x2="420" y2="140" /><line x1="0" y1="190" x2="420" y2="190" />
+            <line x1="0" y1="220" x2="420" y2="220" />
+          </g>
+          <path class="draw" d="M10 210 C 80 205, 110 190, 150 160 S 230 96, 290 70 S 370 44, 410 30"
+                fill="none" stroke="#533afd" stroke-width="1.5" />
+          <path class="draw draw--muted" d="M10 214 C 90 212, 160 208, 230 204 S 350 198, 410 196"
+                fill="none" stroke="#839bc8" stroke-width="1.5" stroke-dasharray="3 5" />
+          <g class="case__labels" font-size="11" fill="#64748d">
+            <text x="10" y="236">M0</text><text x="196" y="236">M6</text><text x="392" y="236">M12</text>
+          </g>
+        </svg>
+        <div class="case__legend">
+          <span><i class="dot dot--indigo" aria-hidden="true"></i> Traitement automatique</span>
+          <span><i class="dot dot--smoke" aria-hidden="true"></i> Référence sectorielle</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─────────────────────────── TÉMOIGNAGE ─────────────────────────── -->
+<section class="section section--quote">
+  <div class="shell quote">
+    <blockquote class="reveal">
+      <p class="quote__text">
+        «&nbsp;Nous avions accumulé trois ans de prototypes. Axiome a supprimé les deux tiers du
+        portefeuille dès la première semaine et livré le reste en production avant la fin du
+        trimestre. C'est la première fois qu'un cabinet nous dit ce qu'il ne faut pas faire.&nbsp;»
+      </p>
+      <footer class="quote__by">
+        <span class="quote__avatar" aria-hidden="true">MV</span>
+        <span>
+          <b>Marianne Vasseur</b>
+          <em>Directrice des opérations, Groupe Lavoisier</em>
+        </span>
+      </footer>
+    </blockquote>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─────────────────────────── OFFRES ─────────────────────────── -->
+<section class="section" id="offres">
+  <div class="shell">
+    <header class="section__head">
+      <p class="eyebrow reveal"><span class="eyebrow__rule" aria-hidden="true"></span>Offres</p>
+      <h2 class="heading-lg reveal" data-delay="60">Trois formats d'engagement.</h2>
+      <p class="section__lede reveal" data-delay="120">
+        Tarification forfaitaire, communiquée avant la signature. Aucun dépassement facturé
+        sur le périmètre convenu.
+      </p>
+    </header>
+
+    <div class="plans">
+      <article class="plan reveal" data-delay="0">
+        <p class="card__tag">Diagnostic</p>
+        <p class="plan__price"><span class="count" data-to="18" data-suffix=" k€">0</span></p>
+        <p class="plan__meta">Forfait · 2 semaines</p>
+        <ul class="plan__list">
+          <li>Entretiens métiers et audit technique</li>
+          <li>Carte des cas d'usage chiffrée</li>
+          <li>Note d'architecture cible</li>
+          <li>Restitution en comité de direction</li>
+        </ul>
+        <a class="btn btn--tertiary" href="#contact">Réserver un créneau</a>
+      </article>
+
+      <article class="plan plan--featured reveal" data-delay="90">
+        <p class="card__tag">Programme complet</p>
+        <p class="plan__price"><span class="count" data-to="120" data-suffix=" k€">0</span></p>
+        <p class="plan__meta">Forfait · 90 jours · le plus choisi</p>
+        <ul class="plan__list">
+          <li>Tout le diagnostic</li>
+          <li>Preuve de valeur évaluée sur vos données</li>
+          <li>Industrialisation et mise en production</li>
+          <li>Transfert de compétences aux équipes</li>
+          <li>Trois mois de supervision inclus</li>
+        </ul>
+        <a class="btn btn--primary magnetic" href="#contact">Lancer le programme</a>
+      </article>
+
+      <article class="plan reveal" data-delay="180">
+        <p class="card__tag">Exploitation</p>
+        <p class="plan__price"><span class="count" data-to="9" data-suffix=" k€">0</span><em>/mois</em></p>
+        <p class="plan__meta">Abonnement · sans engagement de durée</p>
+        <ul class="plan__list">
+          <li>Astreinte et engagement de service</li>
+          <li>Observabilité qualité, coûts, latence</li>
+          <li>Optimisation trimestrielle</li>
+          <li>Rapport mensuel de direction</li>
+        </ul>
+        <a class="btn btn--tertiary" href="#contact">Discuter du périmètre</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─────────────────────────── FAQ ─────────────────────────── -->
+<section class="section" id="faq">
+  <div class="shell faq">
+    <div class="faq__head">
+      <p class="eyebrow reveal"><span class="eyebrow__rule" aria-hidden="true"></span>Questions fréquentes</p>
+      <h2 class="heading-lg reveal" data-delay="60">Ce que l'on nous demande<br />avant de signer.</h2>
+    </div>
+
+    <div class="faq__list">
+      <details class="acc reveal" data-delay="0">
+        <summary><span>Travaillez-vous sur nos données, ou sur un environnement de démonstration&nbsp;?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Sur vos données, dès la preuve de valeur. Un prototype évalué sur un jeu synthétique ne dit rien du comportement en production. Nous signons les accords de confidentialité et de traitement nécessaires avant le premier accès.</p></div>
+      </details>
+      <details class="acc reveal" data-delay="60">
+        <summary><span>Qui détient le code produit pendant la mission&nbsp;?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Vous. L'intégralité du code, des jeux d'évaluation et de la documentation vous est cédée au fil de l'eau, dans vos dépôts. Nous n'utilisons aucune brique propriétaire fermée.</p></div>
+      </details>
+      <details class="acc reveal" data-delay="120">
+        <summary><span>Êtes-vous liés à un fournisseur de modèles&nbsp;?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Non. Nous sélectionnons le modèle par l'évaluation, pas par partenariat commercial, et nous concevons systématiquement la possibilité d'en changer. Plusieurs de nos systèmes tournent sur des modèles ouverts hébergés chez le client.</p></div>
+      </details>
+      <details class="acc reveal" data-delay="180">
+        <summary><span>Comment gérez-vous la conformité au règlement européen sur l'IA&nbsp;?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>La qualification du niveau de risque est faite pendant le diagnostic. Pour les systèmes concernés, nous produisons la documentation technique, le registre et les procédures de supervision humaine exigés, revus par notre conseil juridique partenaire.</p></div>
+      </details>
+      <details class="acc reveal" data-delay="240">
+        <summary><span>Que se passe-t-il si le diagnostic conclut qu'il ne faut rien faire&nbsp;?</span><i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Nous vous le disons, et la mission s'arrête là. C'est arrivé sept fois en quatre ans. Le livrable reste le vôtre, et la conclusion vous aura coûté nettement moins cher qu'un programme mal orienté.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ─────────────────────────── CONTACT ─────────────────────────── -->
+<section class="section" id="contact">
+  <div class="shell contact">
+    <div class="contact__text">
+      <p class="eyebrow reveal"><span class="eyebrow__rule" aria-hidden="true"></span>Prendre contact</p>
+      <h2 class="heading-lg reveal" data-delay="60">Parlons de votre premier<br />système en production.</h2>
+      <p class="section__lede reveal" data-delay="120">
+        Un associé vous rappelle sous 48 heures ouvrées. Le premier échange dure trente minutes
+        et n'engage à rien&nbsp;: nous vous dirons franchement si le sujet est mûr.
+      </p>
+      <ul class="contact__meta reveal" data-delay="180">
+        <li><span>Écrire</span><a class="link-underline" href="mailto:bonjour@axiome.example">bonjour@axiome.example</a></li>
+        <li><span>Appeler</span><a class="link-underline" href="tel:+33100000000">+33 1 00 00 00 00</a></li>
+        <li><span>Bureaux</span>12 rue de Lancry, Paris · Rue du Rhône, Genève</li>
+      </ul>
+    </div>
+
+    <form class="form reveal" data-delay="120" id="contactForm" novalidate>
+      <div class="field">
+        <label for="f-name">Nom et prénom</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Marianne Vasseur" />
+      </div>
+      <div class="field">
+        <label for="f-email">E-mail professionnel</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="m.vasseur@entreprise.fr" />
+      </div>
+      <div class="field">
+        <label for="f-company">Organisation</label>
+        <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Groupe Lavoisier" />
+      </div>
+      <div class="field">
+        <label for="f-subject">Sujet</label>
+        <div class="select-wrap">
+          <select id="f-subject" name="subject">
+            <option>Diagnostic — 2 semaines</option>
+            <option>Programme complet — 90 jours</option>
+            <option>Exploitation — abonnement</option>
+            <option>Autre demande</option>
+          </select>
+          <i aria-hidden="true">›</i>
+        </div>
+      </div>
+      <div class="field field--full">
+        <label for="f-msg">Contexte</label>
+        <textarea id="f-msg" name="message" rows="4" placeholder="Où en êtes-vous aujourd'hui, et qu'est-ce qui bloque&nbsp;?"></textarea>
+      </div>
+      <div class="form__actions">
+        <button class="btn btn--primary magnetic" type="submit">Envoyer la demande</button>
+        <p class="form__note">Vos informations ne sont utilisées que pour vous répondre.</p>
+      </div>
+      <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ─────────────────────────── PIED DE PAGE ─────────────────────────── -->
+<footer class="footer">
+  <div class="shell footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href="#top">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+            <path d="M4 19L12 5l8 14" stroke="currentColor" stroke-width="1.5" />
+            <path d="M8 15h8" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </span>
+        <span class="brand__word">Axiome</span>
+      </a>
+      <p class="footer__pitch">Cabinet de conseil en intelligence artificielle. Nous concevons et opérons des systèmes qui tiennent en production.</p>
+    </div>
+
+    <nav class="footer__col" aria-label="Cabinet">
+      <h4>Cabinet</h4>
+      <a href="#methode">Méthode</a><a href="#resultats">Études de cas</a>
+      <a href="#offres">Offres</a><a href="#contact">Carrières</a>
+    </nav>
+    <nav class="footer__col" aria-label="Expertises">
+      <h4>Expertises</h4>
+      <a href="#expertises">Cadrage</a><a href="#expertises">Agents</a>
+      <a href="#expertises">Socle documentaire</a><a href="#expertises">Gouvernance</a>
+    </nav>
+    <nav class="footer__col" aria-label="Ressources">
+      <h4>Ressources</h4>
+      <a href="#faq">FAQ</a><a href="#resultats">Rapport annuel</a>
+      <a href="#contact">Newsletter</a><a href="#contact">Presse</a>
+    </nav>
+    <nav class="footer__col" aria-label="Légal">
+      <h4>Légal</h4>
+      <a href="#">Mentions légales</a><a href="#">Confidentialité</a>
+      <a href="#">Sous-traitance</a><a href="#">Sécurité</a>
+    </nav>
+  </div>
+  <div class="shell footer__base">
+    <p>© <span data-year>2026</span> Axiome Conseil SAS — Paris</p>
+    <p>Site de démonstration. Les chiffres et références présentés sont fictifs.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
